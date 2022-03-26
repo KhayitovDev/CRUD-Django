@@ -1,0 +1,27 @@
+{% extends 'employee_register/main.html' %}
+{% block content %}
+
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <form method="POST" action="" >
+            {% csrf_token %}
+            <div class="modal-header">
+                <h4 class="modal-title">Delete Employee</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete {{object}}'s Records?</p>
+                <p class="text-warning"><small>This action cannot be undone.</small></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><a href="{% url 'dashboard' %}">Cancel</a>
+                </button>
+                <input type="submit" class="btn btn-danger" value="Delete">
+            </div>
+        </form>
+    </div>
+</div>
+
+
+{% endblock content %}

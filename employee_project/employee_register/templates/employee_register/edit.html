@@ -1,0 +1,41 @@
+{% extends 'employee_register/main.html' %}
+{% block content %}
+
+
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form method="POST" action="">
+                 {% csrf_token %}
+                <div class="modal-header">
+                    <h4 class="modal-title">Edit Employee</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Name</label>
+                        {{form.name}}
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        {{form.email}}
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                       {{form.address}}
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        {{form.phone}}
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><a href="{% url 'dashboard' %}">Cancel</a></button>
+
+                    <input type="submit" class="btn btn-info" value="Save">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    {% endblock content %}
